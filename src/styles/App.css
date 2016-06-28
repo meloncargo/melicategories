@@ -21,6 +21,7 @@ body {
   border: 5px solid #164900;
   background: #A8DB92;
   color: #164900;
+  border-radius: 10px;
 }
 
 .boss-box{
@@ -38,4 +39,8 @@ body {
   font-family: Helvetica, sans-serif;
   margin: 10px;
   padding: 10px;
+}
+
+li{
+  cursor: pointer;
 }
