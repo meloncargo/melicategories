@@ -7,7 +7,7 @@ export default class Box extends React.Component{
 
   constructor(props){
     super(props);
-    this.state = {categories: []}
+    this.state = {categories: [], category: {}}
   }
 
 
@@ -19,8 +19,10 @@ export default class Box extends React.Component{
         return response.json()
       })
       .then(function(json){
-        console.log(json)
-        self.setState({categories: json.children_categories})
+        if (json.settings.listing_allowed){
+          prompt(json.name, json.id)
+        }
+        self.setState({categories: json.children_categories, category: {id: json.id, name: json.name}})
       })
   }
 
@@ -32,12 +34,13 @@ export default class Box extends React.Component{
 
     var box;
     if(this.state.categories.length > 0){
-      box = <Box categories={self.state.categories} />
+      box = <Box key={self.state.category.id} category={self.state.category} categories={self.state.categories} />
     }
 
     return(
       <div className="boss-box">
         <div className="category-box">
+          <h2>{this.props.category.name}</h2>
           {categories}
         </div>
         {box}

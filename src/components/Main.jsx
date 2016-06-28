@@ -30,7 +30,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
-        <Box categories={this.state.categories} />
+        <Box category={{name: 'Root', id: '0'}} categories={this.state.categories} />
       </div>
     );
   }
