@@ -41,6 +41,11 @@ body {
   padding: 10px;
 }
 
-li{
+li a{
   cursor: pointer;
+}
+
+li a:hover{
+  text-shadow: 0 0 0 #000;
+  transition: all .3s ease;
 }
