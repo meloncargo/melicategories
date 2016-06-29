@@ -40,7 +40,7 @@ export default class Box extends React.Component{
     return(
       <div className="boss-box">
         <div className="category-box">
-          <h2>{this.props.category.name}</h2>
+          <h3>{this.props.category.name} 👈</h3>
           {categories}
         </div>
         {box}

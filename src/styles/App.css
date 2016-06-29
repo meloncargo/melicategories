@@ -1,8 +1,7 @@
 /* Base Application Styles */
 body {
   font-family: inherit;
-  color: #FFF;
-  background: #4E9231;
+  background: #FFF;
 }
 
 .index .notice {
@@ -18,10 +17,15 @@ body {
   width: 250px;
   padding: 15px;
   margin-left: 20px;
-  border: 5px solid #164900;
+  /*border: 5px solid #164900;*/
   background: #A8DB92;
   color: #164900;
   border-radius: 10px;
+
+  flex-shrink: 0; 
+
+  box-shadow:
+    0 6px 20px black;
 }
 
 .boss-box{
@@ -33,7 +37,7 @@ body {
 }
 
 .header{
-  color: white;
+  color: gray;
   font-style: italic bold;
   font-size: 30px;
   font-family: Helvetica, sans-serif;

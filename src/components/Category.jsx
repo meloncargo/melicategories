@@ -1,4 +1,5 @@
 import React from 'react';
+import Trend from './Trend';
 
 export default class Category extends React.Component{
 
@@ -7,6 +8,7 @@ export default class Category extends React.Component{
     return(
         <li>
           <a onClick={this.props.handleClick.bind(this, id)}>{name}</a>
+          <Trend {...this.props.categorie} />
         </li>
     )
   }
