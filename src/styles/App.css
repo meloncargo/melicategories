@@ -22,7 +22,7 @@ body {
   color: #164900;
   border-radius: 10px;
 
-  flex-shrink: 0; 
+  flex-shrink: 0; /* default 1 */
 
   box-shadow:
     0 6px 20px black;
@@ -45,7 +45,7 @@ body {
   padding: 10px;
 }
 
-li a{
+.cursor-pointer{
   cursor: pointer;
 }
 

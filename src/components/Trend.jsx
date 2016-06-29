@@ -32,7 +32,7 @@ export default class Trend extends React.Component{
 
   render() {
     return(
-      <span onClick={this.getTrends.bind(this)}> 🔍</span>
+      <span onClick={this.getTrends.bind(this)} className="cursor-pointer"> 🔍</span>
     )
   }
 }
