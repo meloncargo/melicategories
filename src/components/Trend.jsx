@@ -20,6 +20,14 @@ export default class Trend extends React.Component{
           text: trends
          });
       })
+      .catch(function(error) {
+        swal({
+           title: '¡Oh no! 🙊',
+           text: 'Esta categoría no tiene frases más buscadas.',
+           type: 'error',
+           confirmButtonText: 'Sácame de acá. 🏃'
+         })
+       });
   }
 
   render() {
