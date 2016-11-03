@@ -9,16 +9,24 @@ class AppComponent extends React.Component {
 
   constructor(props){
     super(props)
-    this.state = {categories: []}
+    this.state = {categories: [], country_id: ""}
   }
 
   componentDidMount(){
-    this.getCategories()
+    if(this.state.country_id == ""){
+      this.getCategories("MLC")
+    } else{
+      this.getCategories(this.state.country_id)
+    }
   }
 
-  getCategories(){
+  change(event){
+    this.getCategories(event.target.value)
+  }
+
+  getCategories(country){
     var self = this
-    fetch('https://api.mercadolibre.com/sites/MLC/categories', {mode: 'cors'})
+    fetch('https://api.mercadolibre.com/sites/' + country +'/categories', {mode: 'cors'})
       .then(function(response){
         return response.json()
       })
@@ -30,6 +38,10 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className="index">
+        <select id="country_id" onChange={this.change.bind(this)} value={this.state.value} style={{marginBottom: 5, marginLeft: 20 }}>
+          <option value="MLC">MLC</option>
+          <option value="MCO">MCO</option>
+        </select>
         <Box category={{name: 'Root', id: '0'}} categories={this.state.categories} />
       </div>
     );
