@@ -8,3 +8,5 @@ To start the server:
 npm install
 npm start
 ```
+
+Thanks to Alan Toro.
